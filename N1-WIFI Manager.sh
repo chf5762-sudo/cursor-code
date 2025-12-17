@@ -838,4 +838,13 @@ Wants=network-online.target
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/bin/bash -c '/opt/n1-wifi-manager/ap-startup.sh && sleep 3 && /opt/n1-wifi-manager/start-web.sh && /opt/n1-wifi-manager/countdown-daemon.sh &'
-ExecStop=/opt/n1-wifi-manager/stop
+ExecStop=/opt/n1-wifi-manager/stop-services.sh
+EOFSERVICE
+}
+
+################################################################################
+# 主函数 - 执行安装
+################################################################################
+
+# 运行安装
+install_system
